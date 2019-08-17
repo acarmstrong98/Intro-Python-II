@@ -4,14 +4,22 @@
 from Room import Room
 
 class Player:
-    def __init__(self, name, room, items, level, xp=[]):
+
+    def __init__(self, name, current_room):
         self.name = name
-        self.room = room
-        self.items = items
-        self.level = level
-        self.xp = xp
-        self.score = 0
+        self.current_room = current_room
+        self.items = []
 
+    def get_items(self):
+        return self.items
 
-    def __str__(self):
-        return self.items 
+    def add_item(self, item):
+        return self.items.append(item)
+
+    def remove_item(self, item):
+        return self.items.remove(item)
+
+    def __repr__(self):
+        return "Name : " + self.name + "\n Current Room :  " + str(self.current_room) + "\n Your  Items: " + str(
+            self.items)
+
